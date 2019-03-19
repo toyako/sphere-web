@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            background: #333;
+            position: relative;
+        }
+
+        .ball {
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            transition: all .6s;
+        }
+
+        .ball_box {
+            width: 100%;
+            height: 100%;
+            animation: rotate3d 20s infinite linear;
+        }
+        .box {
+            transform-style: preserve-3d;
+        }
+        .ball .ball_box,.ball_box .cliY,.ball_box .cliX{
+            perspective: 1800px;
+            /*background-image: url("001.jpg");*/
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            /*border: solid 1px #fff;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50% 0 0 -50%;
+            transform-style: preserve-3d;
+        }
+
+        .ball .x1 {
+            transform: rotateY(0deg);
+        }
+
+        .ball .x2 {
+            transform: rotateY(20deg)
+        }
+
+        .ball .x3 {
+            transform: rotateY(40deg)
+        }
+
+        .ball .x4 {
+            transform: rotateY(60deg)
+        }
+
+        .ball .x5 {
+            transform: rotateY(80deg)
+        }
+
+        .ball .x6 {
+            transform: rotateY(100deg)
+        }
+
+        .ball .x7 {
+            transform: rotateY(120deg)
+        }
+
+        .ball .x8 {
+            transform: rotateY(140deg)
+        }
+
+        .ball .x9 {
+            transform: rotateY(160deg)
+        }
+
+        .ball .y1 {
+            transform: rotateX(90deg) translateZ(200px) scale(0.60);
+        }
+
+        .ball .y2 {
+            transform: rotateX(90deg) translateZ(150px) scale(0.80);
+        }
+
+        .ball .y3 {
+            transform: rotateX(90deg) translateZ(100px) scale(0.92);
+        }
+
+        .ball .y4 {
+            transform: rotateX(90deg) translateZ(50px) scale(0.98);
+        }
+
+        .ball .y5 {
+            transform: rotateX(90deg) translateZ(0);
+        }
+
+        .ball .y6 {
+            transform: rotateX(90deg) translateZ(-50px) scale(0.98);
+        }
+
+        .ball .y7 {
+            transform: rotateX(90deg) translateZ(-100px) scale(0.92);
+        }
+
+        .ball .y8 {
+            transform: rotateX(90deg) translateZ(-150px) scale(0.80);
+        }
+
+        .ball .y9 {
+            transform: rotateX(90deg) translateZ(-200px) scale(0.60);
+        }
+
+        @keyframes rotate3d {
+            0% {
+                transform: rotate(-20deg) rotateX(-20deg) rotateY(-20deg)
+            }
+            100% {
+                transform: rotate(-20deg) rotateX(-20deg) rotateY(360deg)
+            }
+        }
+        .cliX{
+            background-image: url("https://www.apicloud.com/img/new/cirv1.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .cliY{
+            background-image: url("https://www.apicloud.com/img/new/200-200.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .trandot{
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            width: 100px;
+            height: 28px;
+            margin: -13px 0 0 -56px;
+            transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        .dot{
+            display: inline-block;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #20e03f;
+            background: #000000;
+        }
+        .wrapx{
+            overflow: hidden;
+            position: relative;
+            width: 620px;
+            height: 620px;
+            background: url(https://www.apicloud.com/img/new/ball-bg2.png) no-repeat center;
+            background-size: cover;
+        }
+        .roa{
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            left: 50%;
+            top: 50%;
+            margin: -3px 0 0 -3px;
+            -webkit-animation: road 10s linear infinite;
+            -o-animation: road 10s linear infinite;
+            animation: road 10s linear infinite;
+        }
+        .roa div{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            margin: -5px 0 0 -5px;
+            border: 2px solid #20e03f;
+        }
+        .rd1{
+            top: 121px;
+            left: 233px;
+        }
+        .rd2{
+            right: 206px;
+            bottom: 152px;
+        }
+        @keyframes road {
+            0% {
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+            100% {
+                transform: rotateX(0deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<div class="wrapx">
+    <div class="ball box">
+        <div class="ball_box ">
+            <div class="x1 cliX"></div>
+            <div class="x2 cliX"></div>
+            <div class="x3 cliX"></div>
+            <div class="x4 cliX"></div>
+            <div class="x5 cliX"></div>
+            <div class="x6 cliX"></div>
+            <div class="x7 cliX"></div>
+            <div class="x8 cliX"></div>
+            <div class="x9 cliX"></div>
+            <div class="y1 cliY"></div>
+            <div class="y2 cliY"></div>
+            <div class="y3 cliY"></div>
+            <div class="y4 cliY"></div>
+            <div class="y5 cliY"></div>
+            <div class="y6 cliY"></div>
+            <div class="y7 cliY"></div>
+            <div class="y8 cliY"></div>
+            <div class="y9 cliY"></div>
+            <div class="trandot" style="transform: rotateY(77deg) translateY(-53px) translateZ(265px)">
+                <div class="dot"></div>
+                <a href="javascript:void (0)" target="_blank" class="info">文本</a>
+            </div>
+            <div class="trandot" style="transform: rotateY(0deg) translateY(0px) translateZ(115px)">
+                <div class="dot"></div>
+                <a href="javascript:void (0)" target="_blank" class="info">文本</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="roa">
+        <div class="rd1"></div>
+        <div class="rd2"></div>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        //1.获取元素
+        var oWrap = $('.box');
+        var oImg = $('.box div');
+        // var oImgLen=oImg.length;
+        var deg = 5;//3.每个需要旋转的度数
+        // 定义一个开始的度数
+        var roX = -10;
+        var roY = 0;
+        var x, y, x_, y_, xN, yN, time = null;
+        //2.遍历所有的img标签
+        // for(var i=0;i<oImg.length;i++){
+        //     // oImg[i].style.cssText='transform:rotateY('+i*deg+'deg ) translateZ(350px);transition:1s'+ (oImgLen-i)*0.1 +'s;';
+        //     oImg[i].style.transform = 'rotateY('+ i*deg + 'deg) translateZ(350px)';
+        //     oImg[i].style.transition ='all 1s '+ (oImg.length-i-1)*0.1 +'s';
+        //     //transition:设置过渡
+        //     oImg[i].ondragstart=function (  ) {
+        //         return false;
+        //     }
+        // }
+        //3.事件处理
+        document.onmousedown = function (e) {
+            clearInterval(time);
+            e = e || window.event;
+            x_ = e.clientX;
+            y_ = e.clientY;
+            // console.log ( "鼠标按下了" )
+            this.onmousemove = function (e) {
+                e = e || window.event;
+                //获取滚动的X和Y轴
+                //client:鼠标触发点相对于页面可视区域左上角距离
+                x = e.clientX;
+                y = e.clientY;
+                //两点之间的差值:第一次走的时候两值相等,第二次走的时候x已经更新,但x_没更新,所以两个差值就是xN;
+                xN = x - x_;
+                yN = y - y_;
+                //差值拼接到旋转的Y里面去
+                roY += xN * 0.2;//水平拖影响Y轴;
+                roX -= yN * 0.2;
+                $(oWrap)[0].style.transform = 'rotateX(' + roX + 'deg) rotateY(' + roY + 'deg)';
+                // var oDiv =document.createElement('div');
+                // this.body.appendChild(oDiv);
+                // oDiv.style.cssText='width:5px;height:5px; background:red;position:absolute;left:'+x+"px;top:"+y+"px";
+                x_ = e.clientX;
+                y_ = e.clientY;
+            };
+            this.onmouseup = function () {
+                //  console.log ( "鼠标抬起了" )
+                // this.onmousemove = null;
+                //设置一个定时器,实现后面惯性效果8
+                time = setInterval(function () {
+
+                    //无限乘以零点95它会接近0的状态
+                    xN *= 0.4;
+                    yN *= 0.4;
+                    //当它小到0.1时停止计时器
+                    if (Math.abs(xN) < 0.1 && Math.abs(yN) < 0.1) {//Math.abs()是返回绝对值
+                        clearInterval(time);
+                    }
+                    //差值拼接到旋转的Y里面去
+                    roY += xN * 0.2;//水平拖影响Y轴;
+                    roX -= yN * 0.2;
+                    $(oWrap)[0].style.transform = 'rotateX(' + roX + 'deg) rotateY(' + roY + 'deg)';
+
+                }, 30)
+            }
+        }
+    })
+</script>
+<script>
+    //     $(function(){
+    //
+    //     var imgL=11;
+    //     var deg=360/imgL;
+    //     var roY=0,roX=-10;
+    //     var xN=0,yN=0;
+    //     var play=null;
+    //
+    //
+    //     $('.ball').mousedown(function(ev){
+    //         var x_=ev.clientX;
+    //         var y_=ev.clientY;
+    //         clearInterval(play);
+    //         console.log('0');
+    //         $(this).bind('mousemove',function(ev){
+    //             /*获取当前鼠标的坐标*/
+    //             var x=ev.clientX;
+    //             var y=ev.clientY;
+    //             /*两次坐标之间的距离*/
+    //             xN=x-x_;
+    //             yN=y-y_;
+    //
+    //             roY+=xN*0.2;
+    //             roX-=yN*0.1;
+    //             console.log('1')
+    //             $('.ball').css({
+    //                 transform:'perspective(800px) rotateX('+roX+'deg) rotateY('+roY+'deg)'
+    //             });
+    //             /*之前的鼠标坐标*/
+    //             x_=ev.clientX;
+    //             y_=ev.clientY;
+    //
+    //         });
+    //     }).mouseup(function(){
+    //         $(this).unbind('mousemove');
+    //         var play=setInterval(function(){
+    //
+    //             xN*=0.95;
+    //             yN*=0.95
+    //             if(Math.abs(xN)<1 && Math.abs(yN)<1){
+    //                 clearInterval(play);
+    //             }
+    //             roY+=xN*0.2;
+    //             roX-=yN*0.1;
+    //             $('.ball').css({
+    //                 transform:'perspective(800px) rotateX('+roX+'deg) rotateY('+roY+'deg)'
+    //             });
+    //         },30);
+    //     });
+    // });
+
+
+</script>
+</html>
